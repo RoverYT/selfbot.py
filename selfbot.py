@@ -97,7 +97,7 @@ async def ping(ctx):
 async def spam(self, ctx):
     channel = ctx.message.channel
     await bot.channel.trigger_typing()
-    spammer = discord.ember(title='Spam', description='spam', color=0x00ffff)
+    spammer = discord.embed(title='Spam', description='spam', color=0x00ffff)
     await bot.say(embed=spammer)
 
 @bot.command(pass_context=True)
