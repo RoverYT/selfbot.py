@@ -6,7 +6,6 @@ import datetime
 import json
 import inspect
 import os
-import time
 import glob
 import io
 import textwrap
@@ -104,13 +103,13 @@ async def spammerFunc(ctx):
 @bot.command(pass_context=True)
 async def spam(ctx):
 	spamNow = true
-    await bot.say("Starting Spam")
-	spammerFunc
+	await bot.say("Starting Spam")
+	spammerFunc()
 
 @bot.command(pass_context=True)
 async def spamstop(ctx):
 	spamNow = false
-    await bot.say("Stopping Spam")
+    	await bot.say("Stopping Spam")
 
 @bot.command(pass_context=True)
 async def shutdown(ctx):
