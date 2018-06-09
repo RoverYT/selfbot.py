@@ -94,8 +94,16 @@ async def ping(ctx):
     await bot.say(embed=pong)
     
 @bot.command(pass_context=True)
-async def spam(self, ctx)
-    await bot.say("spam")
+async def spam(ctx):
+    """Pong! Check your response time."""
+    msgtime = ctx.message.timestamp.now()
+    await (await bot.ws.ping())
+    now = datetime.datetime.now()
+    ping = now - msgtime
+    pong = discord.Embed(title='Pong! Response Time:',
+    					 description=str(ping.microseconds / 1000.0) + ' ms',
+                         color=0x00ffff)
+    await bot.say(embed=pong)
 
 @bot.command(pass_context=True)
 async def shutdown(ctx):
