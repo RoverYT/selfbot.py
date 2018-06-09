@@ -94,11 +94,8 @@ async def ping(ctx):
     await bot.say(embed=pong)
     
 @bot.command(pass_context=True)
-async def spam(self, ctx):
-    channel = ctx.message.channel
-    await bot.channel.trigger_typing()
-    spammer = discord.embed(title='Spam', description='spam', color=0x00ffff)
-    await bot.say(embed=spammer)
+async def spam(self, ctx)
+    await bot.say("spam")
 
 @bot.command(pass_context=True)
 async def shutdown(ctx):
