@@ -93,11 +93,13 @@ async def ping(ctx):
                          color=0x00ffff)
     await bot.say(embed=pong)
     
-    @bot.command(pass_context=True)
-    async def spam(self, ctx):
-        """SPAM SPAM SPAM"""
-        await bot.channel.trigger_typing()
-        await bot.say(file=discord.File("assets/imgs/spam.png"))
+@bot.command(pass_context=True)
+async def spam(self, ctx):
+    """SPAM SPAM SPAM"""
+    channel = ctx.message.channel
+    await bot.channel.trigger_typing()
+    spammer = discord.ember(title='Spam', description='spam', color=0x00ffff)
+    await bot.say(embed=spammer)
 
 @bot.command(pass_context=True)
 async def shutdown(ctx):
