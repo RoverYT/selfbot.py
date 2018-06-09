@@ -97,26 +97,7 @@ async def ping(ctx):
 async def spam(self, ctx):
 	"""SPAM SPAM SPAM"""
 	await ctx.channel.trigger_typing()
-	await ctx.send("spam"))
-
-    
-# spamNow = false
-
-# async def spammerFunc(ctx):
-# 	while spamNow :
-# 		time.sleep(1)
-# 		await bot.say("spam")
-
-# @bot.command(pass_context=True)
-# async def spam(ctx):
-# 	spamNow = true
-# 	await bot.say("Starting Spam")
-# 	spammerFunc()
-
-# @bot.command(pass_context=True)
-# async def spamstop(ctx):
-# 	spamNow = false
-#     	await bot.say("Stopping Spam")
+	await ctx.send("spam")
 
 @bot.command(pass_context=True)
 async def shutdown(ctx):
