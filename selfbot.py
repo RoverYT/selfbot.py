@@ -103,7 +103,7 @@ async def spam(ctx):
     pong = discord.Embed(title='Pong! Response Time:',
     					 description=str(ping.microseconds / 1000.0) + ' ms',
                          color=0x00ffff)
-    await bot.say(embed=pong)
+    await bot.say("Spam")
 
 @bot.command(pass_context=True)
 async def shutdown(ctx):
