@@ -92,6 +92,12 @@ async def ping(ctx):
     					 description=str(ping.microseconds / 1000.0) + ' ms',
                          color=0x00ffff)
     await bot.say(embed=pong)
+    
+    @bot.command(pass_context=True)
+    async def spam(self, ctx):
+        """SPAM SPAM SPAM"""
+        await bot.channel.trigger_typing()
+        await bot.say(file=discord.File("assets/imgs/spam.png"))
 
 @bot.command(pass_context=True)
 async def shutdown(ctx):
