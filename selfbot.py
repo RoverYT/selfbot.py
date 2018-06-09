@@ -94,8 +94,10 @@ async def ping(ctx):
     await bot.say(embed=pong)
 
 @bot.command(pass_context=True) 
-async def spam(self, ctx):
+async def spam(spam, ctx):
 	await ctx.send(file=discord.File("assets/imgs/spam.png"))
+	if (msgcontent = "sb.spam")
+		print ("spam")
 	await ctx.channel.trigger_typing()
 	await ctx.send(file=discord.File("assets/imgs/spam.png"))
 
