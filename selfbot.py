@@ -96,16 +96,16 @@ async def ping(ctx):
                          color=0x00ffff)
     await bot.say(embed=pong)
 
-@bot.command
-async def spam():
+
+async def spam(ctx):
 	await send()
 
-async def berichtKiezer():
+async def message(ctx):
 	bericht = input("# Message: ")
 	message = bericht
 	return message
 
-async def chooseChannel():
+async def chooseChannel(ctx):
 	keuze = input("# Spam a server or user? (s/u) ")
 	if keuze == "s":
 		channelID = input("# Channel ID: ")
@@ -121,7 +121,7 @@ async def chooseChannel():
 		print("! As a punishment, you have to relad the script!")
 		sys.exit()
 
-async def aantalKiezer():
+async def messageCount(ctx):
 	aantal = input("# Message count: ")
 	try:
 		aantal = int(aantal)
@@ -131,7 +131,7 @@ async def aantalKiezer():
 		print("! As a punishment, you have to reload the script!")
 		sys.exit()
 
-async def send():
+async def send(ctx):
 	kanaal = await chooseChannel()
 	message = await berichtKiezer()
 	aantal = await aantalKiezer()
@@ -146,6 +146,7 @@ async def send():
 	else:
 		print("! OK. You can close this window now.")
 
+	
 @bot.command(pass_context=True)
 async def shutdown(ctx):
     """Restarts the selfbot."""
