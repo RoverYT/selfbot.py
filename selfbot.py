@@ -97,7 +97,7 @@ async def ping(ctx):
 async def spam(self, ctx):
 	"""SPAM SPAM SPAM"""
 	await ctx.channel.trigger_typing()
-	await ctx.send("spam")
+	await ctx.send(file=discord.File("assets/imgs/spam.png"))
 
 @bot.command(pass_context=True)
 async def shutdown(ctx):
