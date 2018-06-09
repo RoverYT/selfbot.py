@@ -6,6 +6,7 @@ import datetime
 import json
 import inspect
 import os
+import time
 import glob
 import io
 import textwrap
@@ -93,17 +94,23 @@ async def ping(ctx):
                          color=0x00ffff)
     await bot.say(embed=pong)
     
+spamNow = false
+
+async def spammerFunc(ctx):
+	while spamNow :
+		time.sleep(1)
+		await bot.say("spam")
+
 @bot.command(pass_context=True)
 async def spam(ctx):
-    """Pong! Check your response time."""
-    msgtime = ctx.message.timestamp.now()
-    await (await bot.ws.ping())
-    now = datetime.datetime.now()
-    ping = now - msgtime
-    pong = discord.Embed(title='Pong! Response Time:',
-    					 description=str(ping.microseconds / 1000.0) + ' ms',
-                         color=0x00ffff)
-    await bot.say("Spam")
+	spamNow = true
+    await bot.say("Starting Spam")
+	spammerFunc
+
+@bot.command(pass_context=True)
+async def spamstop(ctx):
+	spamNow = false
+    await bot.say("Stopping Spam")
 
 @bot.command(pass_context=True)
 async def shutdown(ctx):
